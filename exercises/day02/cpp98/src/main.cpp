@@ -19,37 +19,36 @@ int main(int argc, char *argv[])
 #if 1
 
    // MODERNC++PREREQUISITES-forloop-run
-   test();
+   // test();
    
    // MODERNC++PREREQUISITES-aminimalclass-run
-   test01::run1();
+   // test01::run1();
    
    // MODERNC++PREREQUISITES-specialmemberfunctions-run
-   test01::run2();
-
+   // test01::run2();
 
    // MODERNC++PREREQUISITES-ruleofthree-run
-   test02::runit();
+   // test02::runit();
    
    // MODERNC++PREREQUISITES-ruleofthree-run-ok
-   test03::runit();
+   // test03::runit();
    
    
    // MODERNC++PREREQUISITES-composition-run
-   test06::runit();
+   // test06::runit();
    
    // MODERNC++PREREQUISITES-inheritance-run
-   test07::runit();
+   // test07::runit();
    
    // MODERNC++PREREQUISITES-interface-run
-   test04::runit();   
-   test05::runit();
+   // test04::runit();   
+   // test05::runit();
 
    // MODERNC++PREREQUISITES-pimpl-run
    pimpl::test();
    
    // MODERNC++PREREQUISITES-stl-run
-   test08::runit();
+   // test08::runit();
    
 #endif
       

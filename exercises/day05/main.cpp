@@ -22,7 +22,11 @@ int main(int argc, char *argv[])
 
     {
         // TODO: Rewrite the above code using modern c++ using algorithm and lambda
-
+        std::vector<int> numbers{1, 2, 3, 4, 5};
+        std::for_each(numbers.begin(), numbers.end(), [](int &n) { n = n * 2;
+                                                                   std::cout << n << " ";
+                                                                 });
+        std::cout << std::endl;
     }
 
 }

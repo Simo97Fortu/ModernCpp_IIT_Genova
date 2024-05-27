@@ -30,6 +30,18 @@ int main(int argc, char *argv[])
 
     {
         // TODO: Rewrite the above code using smart pointers
+        auto d = std::make_unique<double>(1.0);
+        auto pt = std::make_unique<Point>(1.0, 2.0);
+        // Dereference and call member functions
+        *d = 2.0;
+        (*pt).X = 3.0;
+        (*pt).Y = 3.0;
+        std::cout << pt->X << " " << pt->Y << std::endl;
+        // Can use operators for pointer operations
+        pt->X = 5.0;
+        pt->Y = 6.0;
+        std::cout << pt->X << " " << pt->Y << std::endl;
+        
     }
 
     {
@@ -55,6 +67,22 @@ int main(int argc, char *argv[])
 
     {
         // TODO: Rewrite the above code using smart pointers
+        auto d = std::make_unique<double>(1.0);
+        auto pt1 = std::make_shared<Point>(1.0, 2.0);
+        std::cout << "Number of pt counters: " << pt1.use_count() << std::endl;
+        auto pt2 = pt1;
+        std::cout << "Number of pt counters: " << pt1.use_count() << std::endl;
+        // Dereference and call member functions
+        *d = 2.0;
+        (*pt1).X = 3.0;
+        (*pt1).Y = 3.0;
+        std::cout << pt1->X << " " << pt1->Y << std::endl;
+        pt1 = nullptr;
+        std::cout << "Number of pt counters: " << pt2.use_count() << std::endl;
+        // Can use operators for pointer operations
+        pt2->X = 5.0;
+        pt2->Y = 6.0;
+        std::cout << pt2->X << " " << pt2->Y << std::endl;
     }
 
 }
