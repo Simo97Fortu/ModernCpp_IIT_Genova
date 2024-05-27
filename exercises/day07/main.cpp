@@ -2,6 +2,7 @@
 #include <iostream>
 #include <concepts>
 #include <ranges>
+#include <algorithm>
 
 template <typename T>
 T add (T a, T b) requires std::integral<T>{
@@ -22,7 +23,7 @@ int main(int argc, char *argv[])
         double b_double{10};
 
         // auto result = add(...,...);
-        //std::cout<<"The result is "<<result;
+        //std::cout<<"The result is "<<result<<std::endl;
 
         // TODO try to invoke the functions using
         // the three couple of arguments
