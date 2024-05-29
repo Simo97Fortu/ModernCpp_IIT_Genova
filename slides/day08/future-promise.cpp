@@ -44,7 +44,7 @@ int main()
     std::cout << std::endl<< std::endl<< "--------------------------------------------------" <<std::endl; 
     std::cout << std::endl<< std::endl<< "Using asynch to get the result from a thread" <<std::endl; 
 
-    std::future<std::string> myfuture = std::async(generateString, "Valentia", "Gaggero");
+    std::future<std::string> myfuture = std::async(generateString, "Simone", "Fortuna");
     std::cout << "main: the result of generateString is: \"" << myfuture.get() << "\""<<std::endl;
     //myfuture.get() ==> crash !!!!
 
@@ -125,3 +125,30 @@ int main()
 }
 
 //g++ -std=c++11 -pthread -o future-promise future-promise.cpp
+
+/*
+#include <iostream>
+#include <thread>
+#include <mutex>
+
+int shared_counter = 0;
+std::mutex mtx;
+
+void increment(int n) {
+    for (int i = 0; i < n; ++i) {
+        std::lock_guard<std::mutex> lock(mtx);
+        ++shared_counter;
+    }
+}
+
+int main() {
+    std::thread t1(increment, 1000);
+    std::thread t2(increment, 1000);
+
+    t1.join();
+    t2.join();
+
+    std::cout << "Final counter value: " << shared_counter << std::endl;
+    return 0;
+}
+*/

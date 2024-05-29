@@ -59,9 +59,9 @@ void producer()
             isDataReady = true;
         }
 
-        std::cout << "Producer: I'm abut to notify ... " << dataProd << std::endl;
-        c_var.notify_one(); //Here I have only one thread, otherwise I caould call notify_all()
-        std::cout << "Producer: I'm abut to sleep ... " << dataProd << std::endl;
+        std::cout << "Producer: I'm about to notify ... " << dataProd << std::endl;
+        c_var.notify_one(); //Here I have only one thread, otherwise I could call notify_all()
+        std::cout << "Producer: I'm about to sleep ... " << dataProd << std::endl;
         std::this_thread::sleep_for(std::chrono::seconds(5));
         i++;
     }
